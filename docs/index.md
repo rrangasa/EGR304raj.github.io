@@ -5,11 +5,11 @@ tags:
 - tag2
 ---
 <center>
-<font size= "6">Ragul Raj RG Datasheet</font><br>
+<font size= "6">RG Ragul Raj's Datasheet</font><br>
 as part of<br>
 <font size= "8"> Project Name</font><br>
 for<br>
-<font size= "5"> Team ### </font><br>
+<font size= "5"> Team 101</font><br>
 
 **Submission: month, DD, YYYY**
 </center>
