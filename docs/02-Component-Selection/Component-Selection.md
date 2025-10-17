@@ -6,7 +6,7 @@ title: Component Selection
 
 **Push Button**
 
-1a. TS02-66-50-BK-100-LCR-D -- Push Button
+1. TS02-66-50-BK-100-LCR-D -- Push Button
 
     ![](pushbtnimg.webp)
 
