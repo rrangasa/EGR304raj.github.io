@@ -49,3 +49,40 @@ title: Component Selection
 **Choice:** Option 2: C&K D6 Series Keyswitch   
 
 **Rationale:** Since adjacent components in the product also require protection, we must use an enclosure for the entire assembly. This makes the IP67 rating of Option 3 redundant. By using a single enclosure, we can use the higher-quality C&K switch, which offers superior tactile feedback and a much longer 250,000-cycle life, providing better reliability.
+
+
+
+
+**Pull Down Resistor**
+
+1. 10K Ohm SMD Resistor
+
+    ![](smdresist.webp)
+
+    * $0.1/each
+    * [link to product](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices-/TS02-66-50-BK-100-LCR-D/15634294?gclsrc=aw.ds&gad_source=1&gad_campaignid=20243136172&gbraid=0AAAAADrbLlhjMd1SI_TeFQt_5_XtjL5xo&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qTL9B8Ibio6YzZwawgjQTTJfZOm_s9jRh1qKtTfUlaCdgvFL-coORxoCgQgQAvD_BwEhttps://www.digikey.com/en/products/detail/yageo/RC0603FR-0710KL/726880)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | Smaller Form Factor                               | Difficult to Hand Solder |
+    | Moisture Resistant                 
+    | Meets surface mount constraint of project |
+
+2. 10K Ohm SMD Resistor
+
+    ![](thtresist.webp)
+
+    * $0.1/each
+    * [Link to product](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/CF14JA10K0/21720224?gclsrc=aw.ds&gad_source=1&gad_campaignid=20682878391&gbraid=0AAAAADrbLlgbcuo_fYsHwsmmzciY1a4iV&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qe8kMZm3tYG9zKv_h9EisWxUUe3a8mT-ah0_GFUkHc7hP42Tdb7hGRoCVeYQAvD_BwE)
+
+    | Pros                                                              | Cons                |
+    | ----------------------------------------------------------------- | ------------------- |
+    | Easy to Solder & Prototype                                                             |Large   |
+    | Good Operating Temperature                                 
+    |Easy to Repair/Replace|
+
+
+
+**Choice:** Option 2: 10K Ohm SMD Resistor
+
+**Rationale:** We're using a THT resistor. For a simple RC debounce filter, the miniaturization and high-frequency benefits of SMD are unnecessary, while the durability and ease of soldering of a THT resistor are major advantages for reliability and servicing.
