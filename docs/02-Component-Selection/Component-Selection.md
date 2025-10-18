@@ -68,7 +68,7 @@ title: Component Selection
     | Moisture Resistant                 
     | Meets surface mount constraint of project |
 
-2. 10K Ohm SMD Resistor
+2. 10K Ohm THT Resistor
 
     ![](thtresist.webp)
 
@@ -83,7 +83,7 @@ title: Component Selection
 
 
 
-**Choice:** Option 2: 10K Ohm SMD Resistor
+**Choice:** Option 2: 10K Ohm THT Resistor
 
 **Rationale:** We're using a THT resistor. For a simple RC debounce filter, the miniaturization and high-frequency benefits of SMD are unnecessary, while the durability and ease of soldering of a THT resistor are major advantages for reliability and servicing.
 
@@ -133,4 +133,36 @@ title: Component Selection
 
 **Rationale:** We're selecting Option 2 (THT LED). It avoids the difficult manual soldering of the SMD (Option 1) and the unnecessary cost and complexity of the panel-mount (Option 3). Option 2 is the simplest, most cost-effective choice for our manual assembly process.
 
+
+**LED Resistor**
+
+1. 220 Ohm SMD Resistor
+
+    ![](smdresist.webp)
+
+    * $0.1/each
+    * [link to product](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RHC2512FT220R/1646043)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | Smaller Form Factor                               | Difficult to Hand Solder |
+    | Moisture Resistant                 
+    | Meets surface mount constraint of project |
+
+2. 220 Ohm THT Resistor
+
+    ![](thtresist.webp)
+
+    * $0.1/each
+    * [Link to product](https://www.digikey.com/en/products/detail/stackpole-electronics-inc/CF14JT220R/1830334?gclsrc=aw.ds&gad_source=1&gad_campaignid=20682878391&gbraid=0AAAAADrbLlgbcuo_fYsHwsmmzciY1a4iV&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qSPeXHx2WBbg3rgop8kynSdb2YdtY_4OGnXGOXnpnqN0DCFsshwHphoCvekQAvD_BwE)
+
+    | Pros                                                              | Cons                |
+    | ----------------------------------------------------------------- | ------------------- |
+    | Easy to Solder & Prototype                                                             |Large   |
+    | Good Operating Temperature                                 
+    |Easy to Repair/Replace|
+
+*Choice:** Option 2: 220K Ohm THT Resistor
+
+**Rationale:** We're using a THT resistor. For a LED Resistor, the miniaturization and high-frequency benefits of SMD are unnecessary, while the durability and ease of soldering of a THT resistor are major advantages for reliability and servicing.
 
