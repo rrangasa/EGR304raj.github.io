@@ -162,7 +162,43 @@ title: Component Selection
     | Good Operating Temperature                                 
     |Easy to Repair/Replace|
 
-*Choice:** Option 2: 220K Ohm THT Resistor
+**Choice:** Option 2: 220K Ohm THT Resistor
 
 **Rationale:** We're using a THT resistor. For a LED Resistor, the miniaturization and high-frequency benefits of SMD are unnecessary, while the durability and ease of soldering of a THT resistor are major advantages for reliability and servicing.
 
+
+**Potentiometer**
+
+1. PDB181-K420K-504A2
+
+
+    ![](normpot.webp)
+
+    * $1.3/each
+    * [link to product](https://www.digikey.com/en/products/detail/bourns-inc/PDB181-K420K-504A2/699763?gclsrc=aw.ds&gad_source=1&gad_campaignid=20243136172&gbraid=0AAAAADrbLliFVtbptKHwxHXZOLTZ9Dngt&gclid=CjwKCAjw0sfHBhB6EiwAQtv5qbNUYy_icEqKEJR9YgyaVWl__seyFz5mLP7zNynW1Lc2milzz8UQExoCa_MQAvD_BwE)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | easy to use                | Easy to tamper with |
+    | easy to work with| SMD                                        |
+
+2. 3362P-1-103LF
+
+
+
+    ![](trimmerpot.webp)
+
+    * $0.91/each
+    * [Link to product](https://www.digikey.com/en/products/detail/bourns-inc/3362P-1-103LF/1088412)
+
+    | Pros                                                              | Cons                |
+    | ----------------------------------------------------------------- | ------------------- |
+    | Cheaper                                                          | Designed for internal use      |
+    | designed to hold its setting                           | Fragile|
+
+
+
+
+**Choice:** Option 2: 3362P-1-103LF
+
+**Rationale:** We're selecting the trimpot, because it mounts internally. This prevents user tampering and ensures the settings remains the same.
