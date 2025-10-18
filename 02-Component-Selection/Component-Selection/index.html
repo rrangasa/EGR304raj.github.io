@@ -89,11 +89,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#style-2" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -513,17 +508,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Component Selection
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -533,32 +517,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#style-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style 2
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -784,23 +742,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#style-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style 2
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -824,7 +765,6 @@
 
   <h1>Component Selection</h1>
 
-<h3 id="style-2">Style 2</h3>
 <p><strong>Push Button</strong></p>
 <ol>
 <li>
@@ -858,11 +798,11 @@
 </table>
 </li>
 <li>
-<p>CTX936TR-ND surface mount oscillator</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../image3.png" data-desc-position="bottom"><img alt="" src="../image3.png"></a></p>
+<p>C&amp;K D6 Series Keyswitch</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="docs\02-Component-Selection\pshbtn2.jpg" data-desc-position="bottom"><img alt="" src="docs\02-Component-Selection\pshbtn2.jpg"></a></p>
 <ul>
-<li>$1/each</li>
-<li><a href="http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940">Link to product</a></li>
+<li>$1.6/each</li>
+<li><a href="https://www.digikey.com/en/products/detail/c-k/D6R10-F2-LFS/1466347">Link to product</a></li>
 </ul>
 <table>
 <thead>
@@ -877,19 +817,49 @@
 <td>More expensive</td>
 </tr>
 <tr>
-<td>Stable over operating temperature</td>
-<td>Slow shipping speed</td>
+<td>Good Operating Temperature</td>
+<td>Not Water Resistant</td>
 </tr>
 <tr>
-<td>Direct interface with PSoC (no external circuitry required) range</td>
+<td>More Tactile/Better Quality</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>SW-PB11-4CSKG-10 Push Button</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../pshbtn3.jpg" data-desc-position="bottom"><img alt="" src="../pshbtn3.jpg"></a></p>
+<ul>
+<li>$6.43/each</li>
+<li><a href="https://www.digikey.com/en/products/detail/adam-tech/SW-PB11-4CSKG-10/14635466?utm_source=Perplexity&amp;utm_medium=referral">Link to product</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dust Proof</td>
+<td>Expensive</td>
+</tr>
+<tr>
+<td>Water Proof</td>
+<td></td>
+</tr>
+<tr>
+<td>Heavy Duty</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 </li>
 </ol>
-<p><strong>Choice:</strong> Option 2: CTX936TR-ND surface mount oscillator</p>
-<p><strong>Rationale:</strong> A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.</p>
+<p><strong>Choice:</strong> Option 2: C&amp;K D6 Series Keyswitch   </p>
+<p><strong>Rationale:</strong> Since adjacent components in the product also require protection, we must use an enclosure for the entire assembly. This makes the IP67 rating of Option 3 redundant. By using a single enclosure, we can use the higher-quality C&amp;K switch, which offers superior tactile feedback and a much longer 250,000-cycle life, providing better reliability.</p>
 
 
 
