@@ -2,7 +2,6 @@
 title: Component Selection
 ---
 
-### Style 2
 
 **Push Button**
 
@@ -19,19 +18,34 @@ title: Component Selection
     | Good Operating Temperature                      | No Water Protection                                        |
     | Meets surface mount constraint of project |
 
-1. CTX936TR-ND surface mount oscillator
+2. C&K D6 Series Keyswitch
 
-    ![](image3.png)
+    ![](docs\02-Component-Selection\pshbtn2.jpg)
 
-    * $1/each
-    * [Link to product](http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940)
+    * $1.6/each
+    * [Link to product](https://www.digikey.com/en/products/detail/c-k/D6R10-F2-LFS/1466347)
 
     | Pros                                                              | Cons                |
     | ----------------------------------------------------------------- | ------------------- |
     | Cheap                                                             | More expensive      |
-    | Stable over operating temperature                                 | Slow shipping speed |
-    | Direct interface with PSoC (no external circuitry required) range |
+    | Good Operating Temperature                                 | Not Water Resistant|
+    |More Tactile/Better Quality|
 
-**Choice:** Option 2: CTX936TR-ND surface mount oscillator
+3. SW-PB11-4CSKG-10 Push Button
+ 
+    ![](pshbtn3.jpg)
 
-**Rationale:** A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.
+    * $6.43/each
+    * [Link to product](https://www.digikey.com/en/products/detail/adam-tech/SW-PB11-4CSKG-10/14635466?utm_source=Perplexity&utm_medium=referral)
+
+    | Pros                                                              | Cons                |
+    | ----------------------------------------------------------------- | ------------------- |
+    | Dust Proof                                                             | Expensive      |
+    | Water Proof                                 
+    |Heavy Duty|
+
+
+
+**Choice:** Option 2: C&K D6 Series Keyswitch   
+
+**Rationale:** Since adjacent components in the product also require protection, we must use an enclosure for the entire assembly. This makes the IP67 rating of Option 3 redundant. By using a single enclosure, we can use the higher-quality C&K switch, which offers superior tactile feedback and a much longer 250,000-cycle life, providing better reliability.
