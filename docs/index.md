@@ -14,19 +14,28 @@ for<br>
 
 ## Introduction
 
-* This needs to be updated so that a reader gets an idea of the purpose of this datasheet.
+This datasheet documents a user interface subsystem for an embedded systems project. The subsystem consists of push buttons, LEDs, and a potentiometer controlled by a Microchip PIC18F57Q43 microcontroller. This reference includes the design, component selection, schematic, and power budget.
 
 ### Project Summary
 
-* This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.
-* Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/EGR304TeamTemplate/)
+This subsystem provides user interaction for a larger embedded system project. It includes:
 
+- **Inputs**: Two push buttons and one potentiometer
+- **Outputs**: Two LEDs (red and green) for visual feedback
+- **Controller**: Microchip PIC18F57Q43 Curiosity Nano
+- **Power**: 5V regulated supply from an LM7805T voltage regulator
+
+The subsystem connects to other project modules through three 8-pin connectors. Components were selected for reliability and ease of assembly.
+
+This is an individual contribution to Team 101's EGR 304 project. For the complete system overview, see the [team report](https://egr304-2025-f-101.github.io/team101.github.io/).
 
 ### My Contribution
 
-* This needs to be updated to reflect a team introduction
-* Content should also help an unfamiliar reader navigate to areas of interest. Information like:
+This datasheet documents my individual contribution to the Team 101 embedded systems project. As part of a collaborative effort, I was responsible for designing and documenting this complete user interface subsystem/Hub.
 
-To review the details listed of the material used to construct the subsection, you can review it in the ["BOM"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/03-BOM/BOM/) section of the datasheet.
-
-For all the sections
+To explore the specific details of each design phase, navigate to the following sections:
+- **[Block Diagram](01-Block-Diagram/Block-Diagram.md)**: Visual representation of subsystem architecture
+- **[Component Selection](02-Component-Selection/Component-Selection.md)**: Detailed analysis of selected components
+- **[BOM](03-BOM/BOM.md)**: Complete bill of materials with pricing and sourcing
+- **[Schematic](04-Schematic/schematic.md)**: Electrical circuit design
+- **[Power Budget](05-Power-Budget/Power-Budget.md)**: Power consumption analysis
