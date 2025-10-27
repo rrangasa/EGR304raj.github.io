@@ -20,7 +20,7 @@ title: Component Selection
 
 2. C&K D6 Series Keyswitch
 
-    ![](docs\02-Component-Selection\pshbtn2.jpg)
+    ![](pshbtn2.jpg)
 
     * $1.6/each
     * [Link to product](https://www.digikey.com/en/products/detail/c-k/D6R10-F2-LFS/1466347)
