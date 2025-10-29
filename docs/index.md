@@ -20,8 +20,8 @@ This datasheet documents a user interface subsystem for an embedded systems proj
 
 This subsystem provides user interaction for a larger embedded system project. It includes:
 
-- **Inputs**: Two push buttons and one potentiometer
-- **Outputs**: Two LEDs (red and green) for visual feedback
+- **Inputs**: One push button and one potentiometer
+- **Outputs**: One LED (green) for visual feedback
 - **Controller**: Microchip PIC18F57Q43 Curiosity Nano
 - **Power**: 5V regulated supply from an LM7805T voltage regulator
 
