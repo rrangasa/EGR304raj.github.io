@@ -843,7 +843,7 @@
   <h1>Schematic</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This schematic shows the central hub board for a water sprinkler system, controlled by a PIC microcontroller. It's designed to receive user inputs (via a button/potentiometer) and data from a sensor board, while sending control signals to separate motor and speaker boards.</p>
+<p>This schematic shows the central hub board for a water sprinkler system controlled by a PIC18; MCC configures ADCC for analog inputs from the potentiometer and the sensor board, GPIO with Interrupt‑on‑Change for the push button and other digital signals, and EUSART/UART for inter‑board data exchange. Motor and speaker control use GPIO and PWM/CCP.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../screenshot.png" data-desc-position="bottom"><img alt="schematic" height:_300_="height:&quot;300;&quot;" src="../screenshot.png" style="style" width:_350_="width:&quot;350&quot;"></a>
 <strong>Figure 01:</strong> Figure showing the hub schematic.</p>
 <h2 id="resouces">Resouces</h2>
