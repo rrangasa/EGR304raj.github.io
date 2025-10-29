@@ -11,7 +11,7 @@ The power budget was created to estimate the total power consumption of the syst
 
 ## Conclusions
 
-The power budget shows that the system draws about 214 mA and 1.07 W with margin, well below the regulator’s 1500 mA limit. Both linear and switching regulators can handle the load, though switching offers better efficiency. Overall, the design is safe, efficient, and leaves plenty of headroom for expansion.
+The power budget shows that the system draws about 214 mA and 1.07 W with margin, well below the regulator’s 1500 mA limit. Establishing a detailed power budget was critical to the design process, as it ensured that component selections were both electrically compatible and thermally stable under expected operating conditions. Both linear and switching regulators can handle the load, though switching offers better efficiency. Overall, the design is safe, efficient, and leaves plenty of headroom for expansion.
 
 ## Resouces
 
