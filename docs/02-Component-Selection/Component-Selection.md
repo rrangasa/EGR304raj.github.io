@@ -2,6 +2,9 @@
 title: Component Selection
 ---
 
+>My subsystem is primarily software-oriented, with limited hardware components. As a result, there were few physical sensors or actuators to include in the component selection. For this reason, I listed the push button and LED under the component selection section. 
+
+
 
 **Push Button**
 
