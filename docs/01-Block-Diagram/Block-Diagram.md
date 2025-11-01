@@ -12,6 +12,10 @@ All components operate on a regulated 5V, 1.5A supply from an LM7805T voltage re
 
 At the bottom of the diagram, three 8-pin connectors link this subsystem to others within the project. These connectors carry both digital and analog signals for inter-subsystem communication. 
 
+>I do not directly include a major actuator or sensor in my subsystem. However, I receive sensor data from the sensor subsystem, provide motor data to the motor subsystem, and also process input from a potentiometer. Since our design follows a hub-and-spoke architecture, my subsystem functions as the central hub, facilitating data exchange between modules rather than hosting primary actuators or sensors.
+
+
+
 ## Workings
 Our system follows a hub‑and‑spoke architecture: the hub reads a user‑defined soil‑moisture setpoint from a potentiometer, requests the current moisture value from the sensor subsystem, compares that reading to the setpoint of the potentiometer, and—if watering is required—activates the motor/valve (sprinkler) subsystem and cues the speaker; otherwise, it remains idle.
 
