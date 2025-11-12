@@ -149,6 +149,7 @@ title: Component Selection
     |Inexpencive|
 
 **Choice:** Option 1: Microchip MCP6004-I/P.
+
 **Rationale:** The MCP6004 is ideal because it’s rail-to-rail, low-power, and perfectly suited for accurate 3.3 V sensor interfacing in your lawn-watering system.
 
 
