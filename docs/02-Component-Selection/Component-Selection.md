@@ -90,6 +90,37 @@ title: Component Selection
 
 **Rationale:** We're using a THT resistor. For a simple RC debounce filter, the miniaturization and high-frequency benefits of SMD are unnecessary, while the durability and ease of soldering of a THT resistor are major advantages for reliability and servicing.
 
+**LDR**
+
+1. Advanced Photonix PDV-P9203
+
+    ![](https://mm.digikey.com/Volume0/opasdata/d220001/derivates/1/001/167/345/MFG_PDV-P9203_sml%28200x200%29.jpg)
+
+    * $1.5/each
+    * [link to product](https://www.digikey.com/en/products/detail/adafruit-industries-llc/161/7244927)
+
+    | Pros                                      | Cons                                                             |
+    | ----------------------------------------- | ---------------------------------------------------------------- |
+    | Has a specified resistance of 10 kΩ to 30 kΩ at ~10 lux.| Response (rise time) is relatively slow: typ ~70 ms. |
+    | Good light sensitivity range (visible light around 570 nm)|         
+
+2. Adafruit CDS Photoresistor
+
+    ![](https://mm.digikey.com/Volume0/opasdata/d220001/derivates/1/100/957/010/MFG_1528_161_sml.jpg)
+
+    * $0.9/each
+    * [Link to product](https://www.digikey.com/en/products/detail/advanced-photonix/PDV-P9203/480628)
+
+    | Pros                                                              | Cons                |
+    | ----------------------------------------------------------------- | ------------------- |
+    | Pros	Cons
+    |Very low resistance in light. gives strong variation.|More resources compared to Advanced Photonix PDV-P9203    |
+    |Inexpencive|
+
+**Choice:** Option 2: Adafruit CDS Photoresistor
+
+**Rationale:** Clear Light vs Dark discrimination, Low cost, Simple integration.
+
 
 **LED**
 
