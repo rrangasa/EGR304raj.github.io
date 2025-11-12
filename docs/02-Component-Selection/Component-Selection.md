@@ -148,7 +148,7 @@ title: Component Selection
     |Very low resistance in light. gives strong variation.|Not rail-to-rail; output won’t swing to VCC, which complicates 3.3 V MCU interfacing.    |
     |Inexpencive|
 
-**Choice:** Option 1: Microchip MCP6004-I/P
+**Choice:** Option 1: Microchip MCP6004-I/P.
 **Rationale:** The MCP6004 is ideal because it’s rail-to-rail, low-power, and perfectly suited for accurate 3.3 V sensor interfacing in your lawn-watering system.
 
 
