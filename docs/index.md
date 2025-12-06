@@ -38,4 +38,6 @@ To explore the specific details of each design phase, navigate to the following 
 - **[Component Selection](02-Component-Selection/Component-Selection.md)**: Detailed analysis of selected components
 - **[BOM](03-BOM/BOM.md)**: Complete bill of materials with pricing and sourcing
 - **[Schematic](04-Schematic/schematic.md)**: Electrical circuit design
-- **[Power Budget](05-Power-Budget/Power-Budget.md)**: Power consumption analysis
+- **[PCB](05-PCB/pcb.md)**: Printed circuit board design and layout
+- **[Power Budget](06-Power-Budget/Power-Budget.md)**: Power consumption analysis
+- **[Microcontroller Code](07-Microcontroller-Code/Microcontroller-Code.md)**: Firmware implementation and source code
