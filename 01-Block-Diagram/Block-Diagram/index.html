@@ -927,16 +927,13 @@
   <h1>Individal Block Diagram</h1>
 
 <h2 id="overview">Overview</h2>
-<p>The subsystem provides user input and output feedback through one button, one LED, and one potentiometer. The button act as digital input, the LED serve as visual indicator, and the potentiometer provides an adjustable analog input for control functions.</p>
-<p>All components operate on a regulated 5V, 1.5A supply from an LM7805T voltage regulator, powered by a 9V, 3A unregulated source. The central controller is the Microchip PIC18F57Q43 Curiosity Nano, which manages logic, inputs, and outputs. The potentiometer connects to RA0 via ADC1, the  green LED connect to RA5 using PWM, and the button connect to RC4 as digital inputs.</p>
-<p>At the bottom of the diagram, three 8-pin connectors link this subsystem to others within the project. These connectors carry both digital and analog signals for inter-subsystem communication. </p>
-<blockquote>
-<p>I do not directly include a major actuator or sensor in my subsystem. However, I receive sensor data from the sensor subsystem, provide motor data to the motor subsystem, and also process input from a potentiometer. Since our design follows a hub-and-spoke architecture, my subsystem functions as the central hub, facilitating data exchange between modules rather than hosting primary actuators or sensors.</p>
-</blockquote>
+<p>The subsystem provides user input and output feedback through one button, one LED, one potentiometer, and a light-dependent resistor (LDR). The button acts as a digital input, the LED serves as a visual indicator, the potentiometer provides an adjustable analog input for control functions, and the LDR enables light sensing capabilities.</p>
+<p>All components operate on a regulated 5V, 1.5A supply from an LM7805CT voltage regulator (Texas Instruments #LM7805CT/NOPB). The central controller is the Microchip PIC18F57Q43 Curiosity Nano, which manages logic, inputs, and outputs. The potentiometer connects to RA3 as an analog input (0-5V), the LDR signal is amplified through an MCP6004 operational amplifier (Microchip Technology #MCP6004-I/P) and connects to RA2 as an analog input (0-5V), the green LED connects to RD4 as a digital output (5V), and the button connects to RB4 as a digital input.</p>
+<p>The subsystem interfaces with external modules through three 8-pin connectors. Connector 1 provides digital output (RC7) to a speaker module. Connector 2 interfaces with a motor module, receiving digital input (RD6) and providing digital output (RD7). Connector 3 receives PWM input (RC0) from a humidity sensor module. Each connector includes ground connections for proper signal referencing.</p>
 <h2 id="workings">Workings</h2>
 <p>Our system follows a hub‑and‑spoke architecture: the hub reads a user‑defined soil‑moisture setpoint from a potentiometer, requests the current moisture value from the sensor subsystem, compares that reading to the setpoint of the potentiometer, and—if watering is required—activates the motor/valve (sprinkler) subsystem and cues the speaker; otherwise, it remains idle.</p>
 <h2 id="block-diagram">Block Diagram</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../individual-block-diagram.png" data-desc-position="bottom"><img alt="Example of Indivial Block diagram " src="../individual-block-diagram.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../individual-block-diagram.png" data-desc-position="bottom"><img alt="Block diagram " src="../individual-block-diagram.png"></a></p>
 
 
 
