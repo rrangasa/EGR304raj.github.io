@@ -330,4 +330,4 @@ void main(void)
 
 The complete MPLAB X project files are available for download:
 
-- **MPLAB X Project Zip**: [*Download here*](FinalTest.zip)
+- **MPLAB X Project Zip**: [*Download here*](docs\07-Microcontroller-Code\FinalTest1.zip)
