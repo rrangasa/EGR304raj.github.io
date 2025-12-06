@@ -330,4 +330,4 @@ void main(void)
 
 The complete MPLAB X project files are available for download:
 
-- **MPLAB X Project Zip**: [*Download here*](docs\07-Microcontroller-Code\FinalTest1.zip)
+- **MPLAB X Project Zip**: [*Download here*](https://github.com/rrangasa/EGR304raj.github.io/raw/refs/heads/main/docs/07-Microcontroller-Code/FinalTest1.zip)
