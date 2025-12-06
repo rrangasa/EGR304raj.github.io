@@ -1,0 +1,1437 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+
+<meta name="robots" content="nofollow">
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://embedded-systems-design.github.io/EGR304DataSheetTemplate/07-Microcontroller-Code/Microcontroller-Code/">
+      
+      
+        <link rel="prev" href="../../06-Power-Budget/Power-Budget/">
+      
+      
+        <link rel="next" href="../../Appendix/">
+      
+      
+      <link rel="icon" href="../../static/logo304.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+            
+
+    
+
+    
+      
+        <title>Microcontroller Code - EGR 304 Raj's Data Sheet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EGR 304 Raj's Data Sheet" class="md-header__button md-logo" aria-label="EGR 304 Raj's Data Sheet" data-md-component="logo">
+      
+  <img src="../../static/logo304.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EGR 304 Raj's Data Sheet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Microcontroller Code
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/embedded-systems-design/EGR304DataSheetTemplate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-Block-Diagram/Block-Diagram/" class="md-tabs__link">
+          
+  
+    
+  
+  01 Block Diagram
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../02-Component-Selection/Component-Selection/" class="md-tabs__link">
+          
+  
+    
+  
+  02 Component Selection
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-BOM/BOM/" class="md-tabs__link">
+          
+  
+    
+  
+  03 BOM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../04-Schematic/schematic/" class="md-tabs__link">
+          
+  
+    
+  
+  04 Schematic
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../05-PCB/pcb/" class="md-tabs__link">
+          
+  
+    
+  
+  05 PCB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../06-Power-Budget/Power-Budget/" class="md-tabs__link">
+          
+  
+    
+  
+  06 Power Budget
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  07 Microcontroller Code
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Appendix/" class="md-tabs__link">
+          
+  
+    
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EGR 304 Raj's Data Sheet" class="md-nav__button md-logo" aria-label="EGR 304 Raj's Data Sheet" data-md-component="logo">
+      
+  <img src="../../static/logo304.svg" alt="logo">
+
+    </a>
+    EGR 304 Raj's Data Sheet
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/embedded-systems-design/EGR304DataSheetTemplate" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-Block-Diagram/Block-Diagram/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    01 Block Diagram
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-Component-Selection/Component-Selection/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    02 Component Selection
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-BOM/BOM/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    03 BOM
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-Schematic/schematic/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    04 Schematic
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-PCB/pcb/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    05 PCB
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-Power-Budget/Power-Budget/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    06 Power Budget
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    07 Microcontroller Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            07 Microcontroller Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Microcontroller Code
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Microcontroller Code
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Appendix/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendix
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/embedded-systems-design/EGR304DataSheetTemplate/edit/main/docs/07-Microcontroller-Code/Microcontroller-Code.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+    </a>
+  
+  
+
+
+  <h1>Microcontroller Code</h1>
+
+<h2 id="overview">Overview</h2>
+<p>This section documents the microcontroller firmware for the central hub subsystem. The code is written in C and compiled using MPLAB X IDE for the Microchip PIC18F57Q43 Curiosity Nano microcontroller. The firmware implements the hub-and-spoke architecture, managing user inputs (potentiometer, LDR, button), processing sensor data, and controlling outputs (LED, speaker, motor) based on the system logic.</p>
+<p>The code utilizes various peripherals including:
+- <strong>ADCC</strong>: For analog inputs from potentiometer (RA3) and LDR (RA2 via MCP6004 amplifier)
+- <strong>GPIO</strong>: For digital I/O including button input (RB4), LED output (RD4), and motor/speaker control
+- <strong>PWM/CCP</strong>: For motor and speaker control
+- <strong>EUSART/UART</strong>: For inter-board communication</p>
+<h2 id="main-code">Main Code</h2>
+<div class="highlight"><pre><span></span><code><span class="c1">//Ragul Raj</span>
+<span class="c1">// Water Only when PWM Duty Cycle is above 175</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"mcc_generated_files/system/system.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"mcc_generated_files/capture/ccp1.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"mcc_generated_files/adc/adc.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;xc.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdbool.h&gt;</span>
+
+<span class="cp">#ifndef _XTAL_FREQ</span>
+<span class="cp">#define _XTAL_FREQ 16000000UL   </span><span class="c1">// match your MCC System Clock</span>
+<span class="cp">#endif</span>
+
+<span class="c1">// Redirect printf() to UART1</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">putch</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">UART1_IsTxReady</span><span class="p">());</span><span class="w">   </span><span class="c1">// wait until UART ready</span>
+<span class="w">    </span><span class="n">UART1_Write</span><span class="p">((</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">data</span><span class="p">);</span><span class="w">   </span><span class="c1">// send one byte</span>
+<span class="p">}</span>
+
+<span class="cm">/* Global variables */</span>
+<span class="k">volatile</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">rise_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">volatile</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">last_rise_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">volatile</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">pulse_width_ticks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// Raw Timer1 tick value (HIGH time)</span>
+<span class="k">volatile</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">period_ticks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">       </span><span class="c1">// Raw Timer1 tick value (period)</span>
+<span class="k">volatile</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">new_pulse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="k">volatile</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">capture_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// Flag to control capture</span>
+
+<span class="cm">/* CCP1 Callback - captures rising and falling edges to measure pulse width and period */</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">CCP1_CallBack</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">capturedValue</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">capture_active</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span><span class="w">  </span><span class="c1">// Only capture when function is active</span>
+
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CCP1CON</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x0F</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mb">0b0101</span><span class="p">)</span><span class="w">                     </span><span class="c1">// Rising edge just happened</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Calculate period (time between this rising edge and previous rising edge)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">last_rise_time</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">period_diff</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">capturedValue</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">last_rise_time</span><span class="p">)</span>
+<span class="w">                </span><span class="n">period_diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">capturedValue</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">last_rise_time</span><span class="p">;</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">                </span><span class="n">period_diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mh">0xFFFFU</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">last_rise_time</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">capturedValue</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">period_ticks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">period_diff</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">last_rise_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">capturedValue</span><span class="p">;</span>
+<span class="w">        </span><span class="n">rise_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">capturedValue</span><span class="p">;</span>
+<span class="w">        </span><span class="n">CCP1CON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CCP1CON</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xF0</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mb">0b0100</span><span class="p">;</span><span class="w"> </span><span class="c1">// Next: capture falling edge</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mb">0b0100</span><span class="p">)</span><span class="w">                </span><span class="c1">// Falling edge just happened</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">diff</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">capturedValue</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">rise_time</span><span class="p">)</span>
+<span class="w">            </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">capturedValue</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rise_time</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mh">0xFFFFU</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rise_time</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">capturedValue</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Store raw Timer1 tick value (pulse width)</span>
+<span class="w">        </span><span class="n">pulse_width_ticks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diff</span><span class="p">;</span>
+<span class="w">        </span><span class="n">new_pulse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">CCP1CON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CCP1CON</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xF0</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mb">0b0101</span><span class="p">;</span><span class="w"> </span><span class="c1">// Re-arm for next rising edge</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* -----------------------</span>
+<span class="cm">   Initialize PWM capture hardware</span>
+<span class="cm">   - Sets up Timer1 and CCP1 for PWM capture</span>
+<span class="cm">   - Should be called once at startup</span>
+<span class="cm">   ----------------------- */</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">PWM_Capture_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Force Timer1 to 16 MHz (Fosc/4) - required for correct timing</span>
+<span class="w">    </span><span class="n">T1CLKbits</span><span class="p">.</span><span class="n">CS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b00010</span><span class="p">;</span><span class="w">   </span><span class="c1">// Timer1 clock = Fosc/4</span>
+<span class="w">    </span><span class="n">T1CONbits</span><span class="p">.</span><span class="n">CKPS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mb">0b00</span><span class="p">;</span><span class="w">    </span><span class="c1">// 1:1 prescaler</span>
+<span class="w">    </span><span class="n">T1CONbits</span><span class="p">.</span><span class="n">RD16</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">T1CONbits</span><span class="p">.</span><span class="n">ON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Force CCP1 into "every rising edge" mode (overrides MCC setting)</span>
+<span class="w">    </span><span class="n">CCP1CON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x85</span><span class="p">;</span><span class="w">           </span><span class="c1">// 0b10000101 = enabled + every rising edge</span>
+
+<span class="w">    </span><span class="c1">// Register our callback</span>
+<span class="w">    </span><span class="n">CCP1_SetCallBack</span><span class="p">(</span><span class="n">CCP1_CallBack</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// CORRECT interrupt enables for current MCC (2024-2025)</span>
+<span class="w">    </span><span class="n">INTCON0bits</span><span class="p">.</span><span class="n">GIEH</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">     </span><span class="c1">// Global Interrupt High Enable</span>
+<span class="w">    </span><span class="n">INTCON0bits</span><span class="p">.</span><span class="n">GIEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">     </span><span class="c1">// Global Interrupt Low Enable</span>
+
+<span class="w">    </span><span class="c1">// Reset state</span>
+<span class="w">    </span><span class="n">rise_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">last_rise_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pulse_width_ticks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">period_ticks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">new_pulse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">capture_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* -----------------------</span>
+<span class="cm">   Read PWM pulse width</span>
+<span class="cm">   - Waits for a PWM pulse and returns raw Timer1 tick value</span>
+<span class="cm">   - Returns 0xFFFF if timeout occurs</span>
+<span class="cm">   - timeout_ms: Maximum time to wait in milliseconds (0 = wait forever)</span>
+<span class="cm">   ----------------------- */</span>
+<span class="kt">uint16_t</span><span class="w"> </span><span class="nf">PWM_Read</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">timeout_ms</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xFFFF</span><span class="p">;</span><span class="w">  </span><span class="c1">// Error/Timeout value</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">timeout_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Enable capture</span>
+<span class="w">    </span><span class="n">capture_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="n">new_pulse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Wait for a pulse</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">timeout_ms</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Wait forever</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">new_pulse</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Wait with timeout</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">new_pulse</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">timeout_count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">timeout_ms</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">timeout_count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// If we got a pulse, return the value</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">new_pulse</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pulse_width_ticks</span><span class="p">;</span>
+<span class="w">        </span><span class="n">new_pulse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Disable capture until next call</span>
+<span class="w">    </span><span class="n">capture_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* -----------------------</span>
+<span class="cm">   Read multiple PWM pulses and return average duty cycle (0-255)</span>
+<span class="cm">   - Collects num_samples pulses and returns average duty cycle</span>
+<span class="cm">   - timeout_ms: Maximum time to wait for all samples</span>
+<span class="cm">   - Returns 0xFFFF if timeout or no samples collected</span>
+<span class="cm">   ----------------------- */</span>
+<span class="kt">uint16_t</span><span class="w"> </span><span class="nf">PWM_Read_DutyCycle</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">num_samples</span><span class="p">,</span><span class="w"> </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">timeout_ms</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">sum_pulse_width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">sum_period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">timeout_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Reset last_rise_time to start fresh period measurement</span>
+<span class="w">    </span><span class="n">last_rise_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">period_ticks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Enable capture</span>
+<span class="w">    </span><span class="n">capture_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Collect samples</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">num_samples</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">timeout_count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">timeout_ms</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">new_pulse</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Only use sample if we have both pulse width and period</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">period_ticks</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pulse_width_ticks</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">sum_pulse_width</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">pulse_width_ticks</span><span class="p">;</span>
+<span class="w">                </span><span class="n">sum_period</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">period_ticks</span><span class="p">;</span>
+<span class="w">                </span><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">new_pulse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">timeout_count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Disable capture until next call</span>
+<span class="w">    </span><span class="n">capture_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">sum_period</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mh">0xFFFF</span><span class="p">;</span><span class="w">  </span><span class="c1">// No samples collected or invalid period</span>
+
+<span class="w">    </span><span class="c1">// Calculate average duty cycle: (pulse_width / period) * 255</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">avg_pulse_width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_pulse_width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">avg_period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_period</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Duty cycle = (pulse_width / period) * 255</span>
+<span class="w">    </span><span class="c1">// Use 32-bit math to avoid overflow</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">duty_cycle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="kt">uint32_t</span><span class="p">)</span><span class="n">avg_pulse_width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">255UL</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">avg_period</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Clamp to 0-255 range</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">duty_cycle</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">255</span><span class="p">)</span>
+<span class="w">        </span><span class="n">duty_cycle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">uint16_t</span><span class="p">)</span><span class="n">duty_cycle</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">SYSTEM_Initialize</span><span class="p">();</span><span class="w">      </span><span class="c1">// MCC initializes everything</span>
+
+<span class="w">    </span><span class="n">Sensor_State_SetDigitalOutput</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Sensor_State_SetLow</span><span class="p">();</span><span class="w">   </span><span class="c1">// Start with sensor disabled</span>
+<span class="w">    </span><span class="n">Motor_Out_SetDigitalOutput</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Motor_Out_SetLow</span><span class="p">();</span><span class="w">      </span><span class="c1">// Start with motor off</span>
+<span class="w">    </span><span class="n">LED_SetDigitalOutput</span><span class="p">();</span>
+<span class="w">    </span><span class="n">LED_SetLow</span><span class="p">();</span><span class="w">    </span><span class="c1">// Start with LED off</span>
+<span class="w">    </span><span class="n">Speaker_Out_SetDigitalOutput</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Speaker_Out_SetLow</span><span class="p">();</span><span class="w">    </span><span class="c1">// Start with speaker off</span>
+<span class="w">    </span><span class="n">BTN_SetDigitalInput</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// BTN has pull-down resistor, so no pull-up needed</span>
+
+<span class="w">    </span><span class="c1">// Initialize PWM capture hardware</span>
+<span class="w">    </span><span class="n">PWM_Capture_Init</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Initialize ADC (ensure it's ready)</span>
+<span class="w">    </span><span class="n">ADC_Initialize</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\033</span><span class="s">[2J</span><span class="se">\033</span><span class="s">[HPIC18F57Q43 PWM Capture Ready (RC0)</span><span class="se">\r\n</span><span class="s">"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Timer1: 16MHz (FOSC/4, 1:1 prescaler)</span><span class="se">\r\n</span><span class="s">"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Press BTN to check LDR and read PWM</span><span class="se">\r\n\r\n</span><span class="s">"</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">BTN_GetValue</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">   </span><span class="c1">// Button pressed (goes HIGH when pressed)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span><span class="w">        </span><span class="c1">// Debounce</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">BTN_GetValue</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Read LDR ADC value</span>
+<span class="w">                </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">ldr_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ADC_ChannelSelectAndConvert</span><span class="p">(</span><span class="n">LDR</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">printf</span><span class="p">(</span><span class="s">"LDR ADC: %u</span><span class="se">\r\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">ldr_value</span><span class="p">);</span>
+
+<span class="w">                </span><span class="c1">// Check if LDR value is above threshold</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ldr_value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2000</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// Dark enough - enable sensor and read PWM</span>
+<span class="w">                    </span><span class="n">Sensor_State_SetHigh</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">   </span><span class="c1">// Give sensor time to stabilize</span>
+
+<span class="w">                    </span><span class="c1">// Read duty cycle from 50 samples</span>
+<span class="w">                    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">duty_cycle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PWM_Read_DutyCycle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">5000</span><span class="p">);</span><span class="w"> </span><span class="c1">// 50 samples, 5 second timeout</span>
+
+<span class="w">                    </span><span class="c1">// Disable sensor</span>
+<span class="w">                    </span><span class="n">Sensor_State_SetLow</span><span class="p">();</span>
+
+<span class="w">                    </span><span class="c1">// Check duty cycle and act accordingly</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">duty_cycle</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mh">0xFFFF</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">printf</span><span class="p">(</span><span class="s">"Duty cycle: %u (0-255)</span><span class="se">\r\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">duty_cycle</span><span class="p">);</span>
+
+<span class="w">                        </span><span class="c1">// Check soil moisture level</span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">duty_cycle</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">175</span><span class="p">)</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="c1">// Soil is sufficiently moist</span>
+<span class="w">                            </span><span class="n">printf</span><span class="p">(</span><span class="s">"Soil is Sufficiently Moistured</span><span class="se">\r\n</span><span class="s">"</span><span class="p">);</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="k">else</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="c1">// Soil needs water - activate motor and speaker</span>
+<span class="w">                            </span><span class="n">printf</span><span class="p">(</span><span class="s">"Watering...</span><span class="se">\r\n</span><span class="s">"</span><span class="p">);</span>
+
+<span class="w">                            </span><span class="c1">// Set motor and speaker outputs HIGH</span>
+<span class="w">                            </span><span class="n">Motor_Out_SetHigh</span><span class="p">();</span>
+<span class="w">                            </span><span class="n">Speaker_Out_SetHigh</span><span class="p">();</span>
+<span class="w">                            </span><span class="n">LED_SetHigh</span><span class="p">();</span>
+
+<span class="w">                            </span><span class="c1">// Wait 1 second (1000ms)</span>
+<span class="w">                            </span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+
+<span class="w">                            </span><span class="c1">// Set motor and speaker outputs LOW</span>
+<span class="w">                            </span><span class="n">Motor_Out_SetLow</span><span class="p">();</span>
+<span class="w">                            </span><span class="n">Speaker_Out_SetLow</span><span class="p">();</span>
+<span class="w">                            </span><span class="n">LED_SetLow</span><span class="p">();</span>
+<span class="w">                            </span><span class="n">printf</span><span class="p">(</span><span class="s">"Watering complete</span><span class="se">\r\n</span><span class="s">"</span><span class="p">);</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="k">else</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">printf</span><span class="p">(</span><span class="s">"Timeout - no PWM detected</span><span class="se">\r\n</span><span class="s">"</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// Too bright - don't water</span>
+<span class="w">                    </span><span class="n">printf</span><span class="p">(</span><span class="s">"It is too bright to water</span><span class="se">\r\n</span><span class="s">"</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">BTN_GetValue</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// wait for release</span>
+<span class="w">                </span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span><span class="w">   </span><span class="c1">// release debounce</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">__delay_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">  </span><span class="c1">// Small delay in main loop</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="resources">Resources</h2>
+<p>The complete MPLAB X project files are available for download:</p>
+<ul>
+<li><strong>MPLAB X Project Zip</strong>: <a href="FinalTest.zip"><em>Download here</em></a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../../06-Power-Budget/Power-Budget/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Power Budget">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Power Budget
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../Appendix/" class="md-footer__link md-footer__link--next" aria-label="Next: Appendix - Main Page">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Appendix - Main Page
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 team-name-here
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/2025_fall" target="_blank" rel="noopener" title="2023 Site" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h160v80c0 17.7 14.3 32 32 32h80v288c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3l-90.6-90.5C262.7 6.7 246.5 0 229.5 0H64zm97 289c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L79 303c-9.4 9.4-9.4 24.6 0 33.9l48 48c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-31-31 31-31zm96-34c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l31 31-31 31c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9l-48-48z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "toc.follow", "navigation.top", "navigation.path", "navigation.indexes", "navigation.prune", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
