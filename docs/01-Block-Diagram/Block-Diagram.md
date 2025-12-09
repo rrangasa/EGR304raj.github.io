@@ -41,4 +41,4 @@ The following elements of the block diagram contribute to meeting the team's pro
 
 ## Resources
 
-The block diagram as a draw.io XML file is available for download [*here*](raj_teambutIndividualblock.drawio.xml).
+The block diagram as a draw.io XML file is available for download [*here*](https://github.com/rrangasa/EGR304raj.github.io/blob/main/docs/01-Block-Diagram/raj_teambutIndividualblock.drawio.xml).
