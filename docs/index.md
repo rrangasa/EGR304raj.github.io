@@ -13,14 +13,13 @@ for<br>
 </center>
 
 ## Introduction
-
-This datasheet documents a user interface subsystem for an embedded systems project. The subsystem consists of push buttons, LEDs, and a potentiometer controlled by a Microchip PIC18F57Q43 microcontroller. This reference includes the design, component selection, schematic, and power budget.
+This datasheet documents a user interface subsystem for an embedded systems project. The subsystem consists of push buttons, LEDs, and a light-resistive sensor controlled by a Microchip PIC18F57Q43 microcontroller. This reference includes the design, component selection, schematic, and power budget.
 
 ### Project Summary
 
 This subsystem provides user interaction for a larger embedded system project. It includes:
 
-- **Inputs**: One push button and one potentiometer
+- **Inputs**: One push button and one light-resistive sensor
 - **Outputs**: One LED (green) for visual feedback
 - **Controller**: Microchip PIC18F57Q43 Curiosity Nano
 - **Power**: 5V regulated supply from an LM7805T voltage regulator
