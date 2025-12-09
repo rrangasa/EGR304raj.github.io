@@ -21,6 +21,12 @@ This PCB serves as the central hub for a PIC18-based water sprinkler system. It 
 ![Manufactured PCB Bottom](pcb_ral_bottom.jpg){style width:"350" height:"300;"}
 **Figure 04:** Figure showing manufactured and soldered PCB bottom layer.
 
+![Blank PCB Top](pcb_blank_top.jpg){style width:"350" height:"300;"}
+**Figure 05:** Figure showing blank (unpopulated) PCB top layer.
+
+![Blank PCB Bottom](pcb_blank_bottom.jpg){style width:"350" height:"300;"}
+**Figure 06:** Figure showing blank (unpopulated) PCB bottom layer.
+
 
 
 ## Resouces
