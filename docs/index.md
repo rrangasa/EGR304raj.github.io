@@ -12,6 +12,8 @@ for<br>
 **Submission: September, 03, 2025**
 </center>
 
+![Manufactured PCB Top](05-PCB/pcb_ral_top.jpg){style width:"350" height:"300;"}
+
 ## Introduction
 This datasheet documents a user interface subsystem for an embedded systems project. The subsystem consists of push buttons, LEDs, and a light-resistive sensor controlled by a Microchip PIC18F57Q43 microcontroller. This reference includes the design, component selection, schematic, and power budget.
 
