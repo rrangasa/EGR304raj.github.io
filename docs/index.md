@@ -42,3 +42,5 @@ To explore the specific details of each design phase, navigate to the following 
 - **[PCB](05-PCB/pcb.md)**: Printed circuit board design and layout
 - **[Power Budget](06-Power-Budget/Power-Budget.md)**: Power consumption analysis
 - **[Microcontroller Code](07-Microcontroller-Code/Microcontroller-Code.md)**: Firmware implementation and source code
+- **[Hardware V2.0](08-Hardware-V2.0/Hardware-V2.0.md)**: Future improvements and enhancements
+- **[Resources](09-Resources/Resources.md)**: KiCad and MPLAB X project files
